@@ -29,11 +29,10 @@
      <div>
           <p>Кто был на съёмках</p>
           <div v-for="actor in actorsState">
-               <p>{{ actor.nickName }}</p>
+               <p class="">{{ actor.nickName }}</p>
                <p>{{ actor.numberHours }}</p>
                <p>{{ actor.statusNotification }}</p> 
                <!-- Выше будет computed -->
-               
           </div>
      </div>
 </template>
