@@ -1,11 +1,18 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
 export default <Partial<Config>>{
     theme: {
-    extend: {
-      colors: {
-          'blue': '#00FF00',
-          'red': '#FF00FF',
-      }
-    }
-  }
-}
+        fontFamily: {
+            montserrat: ["Montserrat"],
+        },
+        borderRadius: { "big-card": "40px" },
+        extend: {
+            colors: {
+                "main-accent-color": "#A9C189",
+                "main-text-color": "#8E8F8C",
+            },
+            boxShadow: {
+                "big-card": "4px 14px 23px 5px rgba(0, 0, 0, 0.15);",
+            },
+        },
+    },
+};
