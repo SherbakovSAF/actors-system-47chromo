@@ -1,16 +1,20 @@
 <template>
-  <div class="container">
+  
+  <div class="container relative h-screen">
+    <asideBar />
     <shootingWindow :titleName="''" :name="name" :date="date" :period="period" :pageCount="pageCount" :actorsState="actorsState" />
   </div>
 </template>
 
 <script>
 import shootingWindow from './components/shootingWindow.vue';
+import asideBar from './components/asideBar.vue';
 
 import { defineNuxtComponent } from 'nuxt/app';
 export default defineNuxtComponent({
   components: {
-    shootingWindow
+    shootingWindow,
+    asideBar
   },
   data(){
     return {
