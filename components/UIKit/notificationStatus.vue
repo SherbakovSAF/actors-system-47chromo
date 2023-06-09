@@ -45,7 +45,6 @@ export default defineNuxtComponent({
                if(this.actorsStatus.numberHours > 0 && !this.actorsStatus.statusNotification){
                     return 'Человек пришёл, но не предупреждал об этом'
                }
-
                return 'Человек просто пришёл'
           }
      }

@@ -17,7 +17,7 @@
                     <p class="text-center text-main-text-color text-xl font-medium">Кто был на съёмках</p>
                     <div v-for="actor in actorsState" class="grid grid-cols-3 mt-1">
                          <a href="#" class=""><p class="font-medium text-lg text-main-accent-color hover:rotate-3 transition-all ease-in-out duration-300">{{ actor.nickName }}</p></a>
-                         <p class="text-center text-main-text-color text-lg">{{ result(actor) }}{{ actor.numberHours }}</p>
+                         <p class="text-center text-main-text-color text-lg">{{ reCalcPointNotification(actor) }}</p>
                          <!-- <p class="text-end">{{ actor.statusNotification }}</p> -->
                          <p class="text-end"><notificationStatus :actorsStatus="{numberHours: actor.numberHours, statusNotification: actor.statusNotification}"/></p>
                          <!-- Выше будет computed -->
@@ -100,11 +100,18 @@ export default defineNuxtComponent({
      },
      methods: {
           // Переименовать метод
-          result(actor){
-               return actor.numberHours > 0 ? '+' : '-'
-          }, 
-          // Метод по поводу отображения итогов оповещения
+          reCalcPointNotification(actorStats){
+               console.log(actorStats)
+               if(actorStats.numberHours > 0 && actorStats.statusNotification){
+                    return `+${actorStats.numberHours * 2}`
+               }
 
+               if(actorStats.numberHours < 1 && actorStats.statusNotification){
+                    return `-${Math.round(this.period / 60) * 2}`
+               }
+
+               return actorStats.numberHours
+          }, 
      },     
 })
      
