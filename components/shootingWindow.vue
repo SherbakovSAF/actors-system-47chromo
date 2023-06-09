@@ -4,7 +4,7 @@
                <div class="header">
                     <h1 class="text-center text-4xl text-main-accent-color">{{ titleName }}</h1>
                </div>
-               <hr-custom class="my-2"/>
+               <hr-custom class="my-2" v-if="titleName.length > 0"/>
                <div class="flex justify-between text-center">
                     <article v-for="nameList in tableNotationList">
                          <h3 class="font-medium text-xs mb-1">{{ nameList.nameTable }}</h3>
@@ -18,10 +18,13 @@
                     <div v-for="actor in actorsState" class="grid grid-cols-3 mt-1">
                          <a href="#" class=""><p class="font-medium text-lg text-main-accent-color hover:rotate-3 transition-all ease-in-out duration-300">{{ actor.nickName }}</p></a>
                          <p class="text-center text-main-text-color text-lg">{{ result(actor) }}{{ actor.numberHours }}</p>
-                         <p class="text-end">{{ actor.statusNotification }}</p>
+                         <!-- <p class="text-end">{{ actor.statusNotification }}</p> -->
+                         <p class="text-end"><notificationStatus :actorsStatus="{numberHours: actor.numberHours, statusNotification: actor.statusNotification}"/></p>
                          <!-- Выше будет computed -->
+                         
                     </div>
-               </div>
+                    <h1 v-show="!actorsState.length" class="text-center text-2xl font-bold text-main-accent-color py-3">При загрузке данных произошла ошибка</h1>
+               </div> 
           </div>
      </div>
 </template>
@@ -29,10 +32,13 @@
 <script>
 import { defineNuxtComponent } from 'nuxt/app';
 import hrCustom from './UIKit/hrCustom.vue';
+import notificationStatus from './UIKit/notificationStatus.vue';
+
 export default defineNuxtComponent({
      name: 'shootingWindow',
      components: {
-          hrCustom
+          hrCustom,
+          notificationStatus
      },
      props: {
           titleName: {
@@ -63,18 +69,7 @@ export default defineNuxtComponent({
           actorsState: {
                type: Array,
                required: false, 
-               default: [
-                    {
-                         nickName: 'Егор',
-                         numberHours: 5,
-                         statusNotification: true,
-                    },
-                    {
-                         nickName: 'Сергей',
-                         numberHours: 0,
-                         statusNotification: false,
-                    }
-          ]
+               default: []
           }
      },
      data() {
@@ -104,13 +99,13 @@ export default defineNuxtComponent({
           }
      },
      methods: {
+          // Переименовать метод
           result(actor){
                return actor.numberHours > 0 ? '+' : '-'
-          }
-     }
-     
-     
-     
+          }, 
+          // Метод по поводу отображения итогов оповещения
+
+     },     
 })
      
 </script>

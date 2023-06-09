@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <shootingWindow :titleName="titleName" :name="name" :date="date" :period="period" :pageCount="pageCount" :actorsState="actorsState" />
+    <shootingWindow :titleName="''" :name="name" :date="date" :period="period" :pageCount="pageCount" :actorsState="actorsState" />
   </div>
 </template>
 
@@ -28,6 +28,21 @@ export default defineNuxtComponent({
         {
           nickName: 'Сергей',
           numberHours: 0,
+          statusNotification: false,
+        },
+        {
+          nickName: 'Даниил',
+          numberHours: 0,
+          statusNotification: true,
+        },
+        {
+          nickName: 'Семён',
+          numberHours: 1,
+          statusNotification: false,
+        },
+        {
+          nickName: 'Игнат',
+          numberHours: 1,
           statusNotification: false,
         }
       ]
