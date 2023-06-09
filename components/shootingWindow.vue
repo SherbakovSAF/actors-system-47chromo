@@ -18,10 +18,7 @@
                     <div v-for="actor in actorsState" class="grid grid-cols-3 mt-1">
                          <a href="#" class=""><p class="font-medium text-lg text-main-accent-color hover:rotate-3 transition-all ease-in-out duration-300">{{ actor.nickName }}</p></a>
                          <p class="text-center text-main-text-color text-lg">{{ reCalcPointNotification(actor) }}</p>
-                         <!-- <p class="text-end">{{ actor.statusNotification }}</p> -->
-                         <p class="text-end"><notificationStatus :actorsStatus="{numberHours: actor.numberHours, statusNotification: actor.statusNotification}"/></p>
-                         <!-- Выше будет computed -->
-                         
+                         <div class="text-end"><notificationStatus :actorsStatus="{numberHours: actor.numberHours, statusNotification: actor.statusNotification}"/></div>
                     </div>
                     <h1 v-show="!actorsState.length" class="text-center text-2xl font-bold text-main-accent-color py-3">При загрузке данных произошла ошибка</h1>
                </div> 
@@ -77,7 +74,7 @@ export default defineNuxtComponent({
                tableNotationList: [
                     {
                          nameTable: 'Название',
-                         valueTable: this.titleName
+                         valueTable: this.name
                     },
                     {
                          nameTable: 'Дата',
@@ -99,9 +96,7 @@ export default defineNuxtComponent({
           }
      },
      methods: {
-          // Переименовать метод
           reCalcPointNotification(actorStats){
-               console.log(actorStats)
                if(actorStats.numberHours > 0 && actorStats.statusNotification){
                     return `+${actorStats.numberHours * 2}`
                }
