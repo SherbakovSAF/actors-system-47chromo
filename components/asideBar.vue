@@ -8,9 +8,9 @@
           <transition name="fade">
           <ul v-if="isActive">
                     <li v-for="link in linkState" class="inline" :hidden="!isActive">
-                         <a :href="link.url" class="inline text-main-accent-color font-medium m-4">
+                         <NuxtLink :to="link.url" class="inline text-main-accent-color font-medium m-4">
                               {{ link.title }}
-                         </a>
+                         </NuxtLink>
                     </li>
           </ul>
      </transition>
@@ -33,11 +33,11 @@ export default defineNuxtComponent({
      data(){
           return {
                linkState: [
-                    {title: 'Главная страница', url: '#'},
-                    {title: 'Основной состав', url: '#'},
-                    {title: 'Съёмки', url: '#'},
-                    {title: 'F.A.Q', url: '#'},
-                    {title: 'О нас/Как к нам попасть', url: '#'},
+                    {title: 'Главная страница', url: '/'},
+                    {title: 'Основной состав', url: 'mainActors'},
+                    {title: 'Съёмки', url: 'shootings'},
+                    {title: 'F.A.Q', url: 'faq'},
+                    {title: 'О нас/Как к нам попасть', url: 'about'},
                ],
                isActive: true
           }
