@@ -26,7 +26,7 @@ export default defineNuxtComponent({
       actorsState: [
         {
           nickName: 'Егор',
-          numberHours: 5,
+          numberHours: 2,
           statusNotification: true,
         },
         {
