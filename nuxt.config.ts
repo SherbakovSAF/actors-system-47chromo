@@ -4,5 +4,6 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss'
   ],
-  tailwindcss: {}
+  tailwindcss: {},
+  pages: true
 })

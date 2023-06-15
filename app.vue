@@ -1,15 +1,26 @@
 <template>
+<<<<<<< Updated upstream
   <div class="container">
     <shootingWindow :titleName="''" :name="name" :date="date" :period="period" :pageCount="pageCount" :actorsState="actorsState" />
+=======
+  <div class="container relative h-screen">
+    <asideBar />
+    <NuxtPage />
+>>>>>>> Stashed changes
   </div>
 </template>
 
 <script>
+<<<<<<< Updated upstream
 import shootingWindow from './components/shootingWindow.vue';
+=======
+import asideBar from './components/asideBar.vue';
+>>>>>>> Stashed changes
 
 import { defineNuxtComponent } from 'nuxt/app';
 export default defineNuxtComponent({
   components: {
+<<<<<<< Updated upstream
     shootingWindow
   },
   data(){
@@ -47,6 +58,12 @@ export default defineNuxtComponent({
         }
       ]
     }
+=======
+    asideBar
+  },
+  data(){
+    
+>>>>>>> Stashed changes
   }
 })
 </script>
