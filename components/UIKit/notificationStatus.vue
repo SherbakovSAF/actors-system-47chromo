@@ -1,9 +1,11 @@
 <template>
-     <span class="text-white inline px-2 py-1 rounded-notificationStatus" 
-     :class="renderClassActorsStatus"
-     :title="renderTitleActorsStatus">
-     {{ actorsStatus.statusNotification ? '✔' : '✖'}}
-     </span>
+     <div>
+          <span class="text-white inline px-2 py-1 rounded-notificationStatus" 
+          :class="renderClassActorsStatus"
+          :title="renderTitleActorsStatus">
+          {{ actorsStatus.statusNotification ? '✔' : '✖' }}
+          </span>
+     </div>
 </template>
 <script>
 import { defineNuxtComponent } from 'nuxt/app';
@@ -15,8 +17,8 @@ export default defineNuxtComponent({
                type: Object,
                required: false,
                default: {
-                    numberHours: 1,
-                    statusNotification: true
+                    numberHours: 0,
+                    statusNotification: false
                }
           }
      },
@@ -51,5 +53,3 @@ export default defineNuxtComponent({
 })
 
 </script>
-
-<style scoped></style>
