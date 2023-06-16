@@ -1,6 +1,6 @@
 <template>
      <div class="rounded-big-card shadow-big-card mb-16"> 
-          <div class="p-6">
+          <div class="p-12">
                <div class="flex justify-between mb-4">
                     <div>
                          <h3 class="text-main-text-color">Следующие съёмки будут:</h3>

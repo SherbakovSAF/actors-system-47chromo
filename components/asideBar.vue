@@ -1,10 +1,12 @@
 <template>
-     <div>
-          <div class="wrap absolute z-20 top-1/2 w-[105%] shadow-big-card h-36 rounded-big-card flex items-center justify-between 
+     <div class="bg-main-accent-color">
+          <!-- class=" w-auto shadow-big-card h-36 rounded-big-card flex items-center justify-between 
           -translate-y-1/2 
-          -left-[5%]
-          transition-all ease-in-out duration-200" :class="{ 'w-[5%]': !isActive }"
-          >
+          -left-[10%]
+          transition-all ease-in-out duration-200" :class="{ 'w-[5%]': !isActive }" -->
+          <div class="bg-white absolute top-1/2 flex items-center justify-between z-10 border-2 h-36 rounded-big-card -translate-y-1/2 
+               transition-all ease-in-out duration-200"
+               >
                <div>
                     <transition name="fade">
                          <ul v-if="isActive">
@@ -31,6 +33,7 @@
 <script>
 import { defineNuxtComponent } from 'nuxt/app';
 export default defineNuxtComponent({
+     name: 'AsideBar',
      data() {
           return {
                linkState: [
@@ -40,7 +43,7 @@ export default defineNuxtComponent({
                     { title: 'F.A.Q', url: 'faq' },
                     { title: 'О нас/Как к нам попасть', url: 'about' },
                ],
-               isActive: true
+               isActive: false
           }
      }
 })
