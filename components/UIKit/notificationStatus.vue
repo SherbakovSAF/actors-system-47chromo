@@ -1,10 +1,10 @@
 <template>
      <div>
-          <span class="text-white inline px-2 py-1 rounded-notificationStatus" 
+          <figcaption class="text-white inline px-2 py-1 rounded-notificationStatus" 
           :class="renderClassActorsStatus"
           :title="renderTitleActorsStatus">
           {{ actorsStatus.statusNotification ? '✔' : '✖' }}
-          </span>
+          </figcaption>
      </div>
 </template>
 <script>

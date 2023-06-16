@@ -1,21 +1,25 @@
 <template>
      <div class="px-12 py-2 font-montserrat shadow-big-card rounded-big-card">
           <div class="header">
-               <h1 class="text-center text-4xl text-main-accent-color">{{ titleName }}</h1>
+               <h1 class="text-center text-main-accent-color">{{ titleName }}</h1>
           </div>
           <hr-custom class="my-2" v-if="titleName.length > 0"/>
           <div class="flex justify-between text-center">
                <article v-for="nameList in tableNotationList">
-                    <h3 class="font-medium text-xs mb-1">{{ nameList.nameTable }}</h3>
-                    <h2 class="font-medium text-base text-main-accent-color">{{ nameList.valueTable }}</h2>
+                    <div class="font-medium text-xs mb-1">{{ nameList.nameTable }}</div>
+                    <div class="font-medium text-base text-main-accent-color">{{ nameList.valueTable }}</div>
                </article>
           </div>
           <hr-custom class="my-2"/>
           <div>
-               <p class="text-center text-main-text-color text-xl font-medium">Кто был на съёмках</p>
+               <h3 class="text-center  text-main-text-color">Кто был на съёмках</h3>
                <div v-for="actor in actorsState" class="grid grid-cols-3 mt-1">
-                    <a href="#" class=""><p class="font-medium text-lg text-main-accent-color hover:rotate-3 transition-all ease-in-out duration-300">{{ actor.nickName }}</p></a>
-                    <p class="text-center text-main-text-color text-lg">{{ reCalcPointNotification(actor) }}</p>
+                    <a href="#">
+                         <div class="text-main-accent-color font-medium text-lg hover:rotate-3 transition-all ease-in-out duration-300">
+                              {{ actor.nickName }}
+                         </div>
+                    </a>
+                    <div class="text-center text-main-text-color text-lg">{{ reCalcPointNotification(actor) }}</div>
                     <div class="text-end"><notificationStatus :actorsStatus="{numberHours: actor.numberHours, statusNotification: actor.statusNotification}"/></div>
                </div>
                <h1 v-show="!actorsState.length" class="text-center text-2xl font-bold text-main-accent-color py-3">При загрузке данных произошла ошибка</h1>

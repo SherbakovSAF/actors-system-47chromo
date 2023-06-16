@@ -1,6 +1,6 @@
 <template>
      <div>
-          <shootingWindow :titleName="''" :name="name" :date="date" :period="period" :pageCount="pageCount" :actorsState="actorsState" />
+          <shootingWindow :titleName="'Привет'" :name="name" :date="date" :period="period" :pageCount="pageCount" :actorsState="actorsState" />
      </div>
 </template>
    

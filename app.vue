@@ -1,5 +1,4 @@
 <template>
-  
   <div class="container">
     <asideBar />
     <NuxtPage />
@@ -7,11 +6,5 @@
     
 </template>
 
-<style>
-.container{
-  position: relative;
-  max-width: 750px;
-  margin: 0 auto;
-  height: 100vh;
-}
+<style src="./assets/main.css">
 </style>
