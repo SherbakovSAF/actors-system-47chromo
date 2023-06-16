@@ -1,16 +1,18 @@
 <template>
      <div>
-          <shootingWindow :titleName="''" :name="name" :date="date" :period="period" :pageCount="pageCount" :actorsState="actorsState" />
+          <main-info-banner />
+          <shooting-window :titleName="'Последние съёмки'" :name="name" :date="date" :period="period" :pageCount="pageCount" :actorsState="actorsState" />
      </div>
 </template>
    
 <script>
 import shootingWindow from '../components/shootingWindow.vue';
-
+import mainInfoBanner from '~/components/mainInfoBanner.vue';
 import { defineNuxtComponent } from 'nuxt/app';
 export default defineNuxtComponent({
      components: {
           shootingWindow,
+          mainInfoBanner
      },
      data() {
           return {

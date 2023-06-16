@@ -16,7 +16,7 @@ export default <Partial<Config>>{
                 'notificationStatus-notCameAndNotified': "#C65A5A",
                 'notificationStatus-notCameAndNotNotified': "#8093D6",
                 'notificationStatus-CameAndNotNotified': "#D7D975",
-                
+                'white': '#fff'
             },
             boxShadow: {
                 "big-card": "4px 14px 23px 5px rgba(0, 0, 0, 0.15);",
