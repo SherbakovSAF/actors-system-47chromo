@@ -39,9 +39,10 @@ export default defineNuxtComponent({
                linkState: [
                     { title: 'Главная страница', url: '/' },
                     { title: 'Основной состав', url: 'actors' },
-                    { title: 'Съёмки', url: 'shooting' },
+                    { title: 'Съёмки', url: 'shootings' },
                     { title: 'F.A.Q', url: 'faq' },
                     { title: 'О нас/Как к нам попасть', url: 'about' },
+                    
                ],
                isActive: false
           }

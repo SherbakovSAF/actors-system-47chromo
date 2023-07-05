@@ -19,8 +19,12 @@
                               {{ actor.nickName }}
                          </div>
                     </a>
-                    <div class="text-center text-main-text-color text-lg">{{ reCalcPointNotification(actor) }}</div>
-                    <div class="text-end"><notificationStatus :actorsStatus="{numberHours: actor.numberHours, statusNotification: actor.statusNotification}"/></div>
+                    <div class="text-center text-main-text-color text-lg">
+                         {{ reCalcPointNotification(actor) }}
+                    </div>
+                    <div class="text-end">
+                         <notificationStatus :actorsStatus="{numberHours: actor.numberHours, statusNotification: actor.statusNotification}"/>
+                    </div>
                </div>
                <h1 v-show="!actorsState.length" class="text-center text-2xl font-bold text-main-accent-color py-3">При загрузке данных произошла ошибка</h1>
           </div> 
