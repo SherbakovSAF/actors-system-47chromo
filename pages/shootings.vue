@@ -1,6 +1,8 @@
 <template>
      <div>
-          <shooting-window v-for="shootin in shootingsArray"
+          <h1 class="mb-5 text-center text-main-accent-color">История съёмок</h1>
+          <div class="grid gap-y-10">
+               <shooting-window v-for="shootin in shootingsArray"
           title-name=""
           :name="shootin.name"
           :date="shootin.date"
@@ -8,6 +10,7 @@
           :pageCount="shootin.pageCount"
           :actors-state="shootin.actors"
           />
+          </div>
      </div>
 </template>
 
