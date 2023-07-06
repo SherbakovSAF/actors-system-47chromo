@@ -112,7 +112,8 @@ export default defineNuxtComponent({
 
                return actorStats.numberHours
           }, 
-     },     
+     },  
+      
 })
      
 </script>

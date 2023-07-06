@@ -2,13 +2,13 @@
      <div>
           <h1 class="mb-5 text-center text-main-accent-color">История съёмок</h1>
           <div class="grid gap-y-10">
-               <shooting-window v-for="shootin in shootingsArray"
+               <shooting-window v-for="shooting in renderShootings"
           title-name=""
-          :name="shootin.name"
-          :date="shootin.date"
-          :period="shootin.timeMinute"
-          :pageCount="shootin.pageCount"
-          :actors-state="shootin.actors"
+          :name="shooting.name"
+          :date="shooting.date"
+          :period="shooting.timeMinute"
+          :pageCount="shooting.pageCount"
+          :actors-state="shooting.actors"
           />
           </div>
      </div>
@@ -17,21 +17,17 @@
 <script>
 import shootingWindow from '~/components/shootingWindow.vue';
 
+import { useShootingsStore } from '@/stores/shootingsStore'
 export default {
      name: 'ShootingsPage',
      components: {
           shootingWindow
      },
-     data(){
-          return {
-               shootingsArray: []
+     computed: {
+          renderShootings(){
+               return useShootingsStore().shootings
           }
-     },
-     async mounted() {
-          let res = await fetch('../API/state.json')
-          let aa = await res.json()
-          this.shootingsArray = [...aa]
-          console.log(this.shootingsArray)
      }
+     
 }
 </script>
