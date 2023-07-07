@@ -4,28 +4,27 @@
           -translate-y-1/2 
           -left-[10%]
           transition-all ease-in-out duration-200" :class="{ 'w-[5%]': !isActive }" -->
-          <div class="bg-white absolute top-1/2 flex items-center justify-between z-10 border-2 h-36 rounded-big-card -translate-y-1/2 
+          <div class="bg-white absolute top-1/2 flex items-center justify-between z-10 border-2  -translate-y-1/2 
                transition-all ease-in-out duration-200"
                >
-               <div>
-                    <transition name="fade">
-                         <ul v-if="isActive">
-                              <li v-for="link in linkState" class="inline" :hidden="!isActive">
-                                   <NuxtLink :to="link.url" class="inline text-main-accent-color font-medium m-4">
-                                        {{ link.title }}
+                         <ul class="flex flex-col justify-between h-screen ">
+                              <li v-for="link in linkState">
+                                   <NuxtLink :to="link.url">
+                                        <div class="text__writing inline text-main-accent-color font-medium rotate-180 p-4 transition-all ease-in-out duration-200 hover:rotate-[185deg]">
+                                             {{ link.title }}
+                                        </div>
                                    </NuxtLink>
                               </li>
                          </ul>
-                    </transition>
-               </div>
-               <svg class="w-5 cursor-pointer m-2
+                    
+               <!-- <svg class="w-5 cursor-pointer m-2
                     transition-all ease-in-out duration-300 " :class="{
                     'rotate-0': !isActive,
                     'rotate-180': isActive}" 
                     @click="isActive = !isActive" 
                     viewBox="0 0 9 14" fill="#A9C189">
                     <path d="M6.660,8.922 L6.660,8.922 L2.350,13.408 L0.503,11.486 L4.813,7.000 L0.503,2.515 L2.350,0.592 L8.507,7.000 L6.660,8.922 Z" />
-               </svg>
+               </svg> -->
           </div>
      </div>
 </template>
@@ -37,16 +36,18 @@ export default defineNuxtComponent({
      data() {
           return {
                linkState: [
+                    { title: 'F.A.Q', url: 'faq' },
+                    { title: 'Съёмки', url: 'shootings' },
                     { title: 'Главная страница', url: '/' },
                     { title: 'Основной состав', url: 'actors' },
-                    { title: 'Съёмки', url: 'shootings' },
-                    { title: 'F.A.Q', url: 'faq' },
-                    { title: 'О нас/Как к нам попасть', url: 'about' },
-                    
+                    { title: 'О нас/Как к нам попасть', url: 'about' },     
                ],
                isActive: false
           }
-     }
+     },
+     // mounted() {
+     //      console.log(this.linkState.reverse())
+     // }
 })
 </script>
 
@@ -60,5 +61,10 @@ export default defineNuxtComponent({
 .fade-leave-to {
      transform: translateX(-100%);
      opacity: 0;
+     
+}
+
+.text__writing{
+     writing-mode: vertical-lr;
 }
 </style>
