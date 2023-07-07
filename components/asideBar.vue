@@ -1,22 +1,19 @@
 <template>
      <div class="bg-main-accent-color">
-          <!-- class=" w-auto shadow-big-card h-36 rounded-big-card flex items-center justify-between 
-          -translate-y-1/2 
-          -left-[10%]
-          transition-all ease-in-out duration-200" :class="{ 'w-[5%]': !isActive }" -->
-          <div class="bg-white absolute top-1/2 flex items-center justify-between z-10 border-2  -translate-y-1/2 
-               transition-all ease-in-out duration-200"
-               >
+          <div class="bg-white fixed top-1/2 flex items-center justify-between z-10 border-2  -translate-y-1/2 
+               transition-all ease-in-out duration-200">
                          <ul class="flex flex-col justify-between h-screen ">
                               <li v-for="link in linkState">
                                    <NuxtLink :to="link.url">
-                                        <div class="text__writing inline text-main-accent-color font-medium rotate-180 p-4 transition-all ease-in-out duration-200 hover:rotate-[185deg]">
+                                        <div 
+                                        class="text__writing inline text-main-accent-color font-medium rotate-180 p-4 
+                                             transition-all ease-in-out duration-200 
+                                             hover:rotate-[185deg]">
                                              {{ link.title }}
                                         </div>
                                    </NuxtLink>
                               </li>
-                         </ul>
-                    
+                         </ul>     
                <!-- <svg class="w-5 cursor-pointer m-2
                     transition-all ease-in-out duration-300 " :class="{
                     'rotate-0': !isActive,

@@ -130,6 +130,69 @@ export const useShootingsStore = defineStore("shootingsStore", {
                         },
                     ],
                 },
+                {
+                    name: "Вага ЕГЭ",
+                    date: "09.06.2023",
+                    timeMinute: 150,
+                    pageCount: 4,
+                    actors: [
+                        {
+                            nickName: "Kenny",
+                            numberHours: 3,
+                            statusNotification: true,
+                        },
+                        {
+                            nickName: "Devil",
+                            numberHours: 3,
+                            statusNotification: true,
+                        },
+                        {
+                            nickName: "3light",
+                            numberHours: 0,
+                            statusNotification: true,
+                        },
+                        {
+                            nickName: "Rick Sanchez",
+                            numberHours: 0,
+                            statusNotification: false,
+                        },
+                        {
+                            nickName: "Andrew Shon",
+                            numberHours: 3,
+                            statusNotification: false,
+                        },
+                        {
+                            nickName: "Dima Etenko",
+                            numberHours: 0,
+                            statusNotification: true,
+                        },
+                        {
+                            nickName: "Prihozu",
+                            numberHours: 0,
+                            statusNotification: true,
+                        },
+                        {
+                            nickName: "Salinder Lazin",
+                            numberHours: 3,
+                            statusNotification: true,
+                        },
+                        {
+                            nickName: "talant",
+                            numberHours: 0,
+                            statusNotification: false,
+                        },
+                        {
+                            nickName: "Bogdan Solomon",
+                            numberHours: 9,
+                            statusNotification: false,
+                        },
+                        {
+                            nickName: "Pekhlt",
+                            numberHours: 0,
+                            statusNotification: false,
+                        },
+                    ],
+                },
             ],
         };
     },

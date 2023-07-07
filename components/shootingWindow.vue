@@ -1,5 +1,5 @@
 <template>
-     <div class="px-12 py-2 font-montserrat shadow-big-card rounded-big-card">
+     <div class="px-12 py-2 mb-10 font-montserrat shadow-big-card rounded-big-card">
           <div class="header">
                <h1 class="text-center text-main-accent-color">{{ titleName }}</h1>
           </div>
