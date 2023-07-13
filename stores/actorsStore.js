@@ -10,7 +10,8 @@ export const useActorsStore = defineStore("actorsStore", {
                     totalPoints: 2000,
                     dateEntryMilliseconds: 1442696400000,
                     level: 9,
-                    awards: []
+                    awards: [],
+                    isMain: false
                 },
                 {
                     nickName: "Kenny",
@@ -18,7 +19,8 @@ export const useActorsStore = defineStore("actorsStore", {
                     totalPoints: 423,
                     dateEntryMilliseconds: 1566162000000,
                     level: 8,
-                    awards: []
+                    awards: [],
+                    isMain: true
                 },
                 {
                     nickName: "Devil",
@@ -26,7 +28,8 @@ export const useActorsStore = defineStore("actorsStore", {
                     totalPoints: 210,
                     dateEntryMilliseconds: 1662757200000,
                     level: 7,
-                    awards: []
+                    awards: [],
+                    isMain: true
                 }
             ]
         };
