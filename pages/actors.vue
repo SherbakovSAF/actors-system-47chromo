@@ -3,7 +3,7 @@
           
           <div class="rounded-big-card shadow-big-card p-6">
                <div class="flex justify-around">
-                    <button class="text-main-accent-color"
+                    <button class="text-main-accent-color font-medium"
                          @click="selectComponentToggle(btn)"
                     v-for="btn in btnContent" :key="btn.id">{{ btn.title }}</button>
                </div>

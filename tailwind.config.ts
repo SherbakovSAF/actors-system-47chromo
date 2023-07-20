@@ -6,7 +6,8 @@ export default <Partial<Config>>{
         },
         borderRadius: { 
             "big-card": "40px",
-            'notificationStatus': '15px'
+            'notificationStatus': '15px',
+            'full': '100%',
         },
         extend: {
             colors: {
